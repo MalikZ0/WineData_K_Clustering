@@ -1,0 +1,34 @@
+### 1. PCA: Explain and Where It Is Used in This Program
+**PCA Explanation:**
+- **Principal Component Analysis (PCA)** is a technique used to reduce the number of variables in a dataset while preserving as much information as possible. It transforms the original variables into a new set of variables called principal components, which are uncorrelated and ordered by the amount of variance they explain in the data.
+
+**Usage in the Program:**
+- **Step-by-Step:**
+  1. **Apply PCA**: The program uses the `prcomp` function to perform PCA on the scaled wine data.
+  2. **Select Principal Components**: The program selects the first 7 principal components based on the cumulative score.
+  3. **Transform Data**: The new dataset `CW_pca_transform` is created using the selected principal components.
+
+### 2. Why Is PCA Important?
+**Explanation:**
+- **Dimensionality Reduction**: PCA reduces the number of variables, making it easier to visualize and analyze data.
+- **Remove Redundancy**: It removes redundant information by combining correlated variables into principal components.
+- **Enhance Performance**: Reducing the number of variables can improve the performance of machine learning algorithms by reducing overfitting and computation time.
+
+### 3. Difference Between Data Preprocessing and PCA
+**Data Preprocessing:**
+- **Definition**: The initial steps taken to clean and prepare raw data for analysis.
+- **Steps**: Includes loading data, removing unnecessary columns, handling missing values, and scaling data.
+
+**PCA:**
+- **Definition**: A statistical technique used to reduce the dimensionality of the dataset.
+- **Steps**: Involves transforming the data into principal components that explain the most variance.
+
+**Comparison:**
+- **Purpose**: Data preprocessing ensures data quality and consistency, while PCA reduces data dimensionality.
+- **Best Approach**: It's best to perform data preprocessing first to clean and prepare the data, then apply PCA for dimensionality reduction.
+
+### 4. Why Choose 1-7 Principal Components
+**Explanation:**
+- **Cumulative Score**: The program calculates the cumulative variance explained by each principal component.
+- **85% Threshold**: It selects the number of components that together explain at least 85% of the variance in the data.
+- **Selected Components**: In this case, the first 7 principal components were chosen because they explain more than 85% of the variance, ensuring most information is retained with fewer variables.
